@@ -219,7 +219,7 @@ function Index() {
             <div className="mt-10 flex flex-wrap items-center justify-center gap-3"><Button asChild variant="gold" size="lg"><a href="#contact">Talk to an Advisor <ArrowRight /></a></Button><Button asChild variant="heroOutline" size="lg"><a href="#services">Explore Our Services <ArrowDownRight /></a></Button></div>
             <div className="mt-14 hidden items-center justify-center gap-6 lg:flex"><span className="gold-line w-16" /><p className="font-display text-2xl text-gold">One team. One place.</p><span className="gold-line w-16" /></div>
           </div>
-          <a href="#about" className="mt-20 flex items-center gap-3 text-[10px] font-semibold uppercase tracking-[0.28em] text-primary-foreground/60 transition-colors hover:text-gold"><span className="grid size-8 place-items-center rounded-full border border-primary-foreground/30"><ChevronDown className="size-4" /></span> Discover CapitalNest</a>
+          <a href="#about" className="mx-auto mt-20 flex w-fit items-center gap-3 text-[10px] font-semibold uppercase tracking-[0.28em] text-primary-foreground/60 transition-colors hover:text-gold"><span className="grid size-8 place-items-center rounded-full border border-primary-foreground/30"><ChevronDown className="size-4" /></span> Discover CapitalNest</a>
         </div>
       </section>
 
