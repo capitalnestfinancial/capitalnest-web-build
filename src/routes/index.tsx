@@ -202,23 +202,24 @@ function Index() {
         {menuOpen ? <nav className="border-t border-primary-foreground/10 bg-primary px-4 py-4 xl:hidden" aria-label="Mobile navigation">{navItems.map(([label, id]) => <a key={id} href={`#${id}`} onClick={() => setMenuOpen(false)} className="block border-b border-primary-foreground/10 py-3 text-sm uppercase tracking-[0.14em] text-primary-foreground/80 last:border-b-0">{label}</a>)}<a href="#contact" onClick={() => setMenuOpen(false)} className="mt-3 block py-3 text-sm font-semibold uppercase tracking-[0.14em] text-gold">Talk to an Advisor <ArrowRight className="ml-2 inline size-4" /></a></nav> : null}
       </header>
 
-      <section className="relative isolate flex min-h-[760px] items-end bg-primary pb-20 pt-36 text-primary-foreground sm:min-h-[800px] lg:min-h-[860px] lg:items-center">
+      <section className="relative isolate flex min-h-[760px] items-center bg-primary pb-24 pt-36 text-primary-foreground sm:min-h-[820px] lg:min-h-[880px]">
         <img src={heroAsset.url} alt="Sunlit boardroom overlooking Jaipur" width={1600} height={1104} className="absolute inset-0 -z-20 h-full w-full object-cover object-center animate-slow-pan" />
         <div className="absolute inset-0 -z-10 bg-primary/75" />
-        <div className="absolute inset-0 -z-10 bg-gradient-to-r from-primary/95 via-primary/70 to-primary/20" />
+        <div className="absolute inset-0 -z-10 bg-gradient-to-b from-primary/80 via-primary/55 to-primary/85" />
         <div className="section-shell w-full">
-          <div className="grid max-w-4xl gap-12 lg:grid-cols-[minmax(0,1fr)_220px] lg:items-end">
-            <div className="animate-rise-in">
-              <BrandMark />
-              <div className="mt-12 flex items-center gap-4 text-[10px] font-semibold uppercase tracking-[0.32em] text-gold"><span className="h-px w-10 bg-gold" />Jaipur & Rajasthan</div>
-              <h1 className="mt-6 max-w-3xl font-display text-6xl leading-[0.88] text-primary-foreground sm:text-7xl lg:text-[7.5rem]">Building Wealth.<br /><span className="text-gold">Securing Futures.</span></h1>
-              <p className="mt-8 max-w-xl text-lg leading-8 text-primary-foreground/80">Complete Financial Solutions for Individuals and Businesses.</p>
-              <p className="mt-3 max-w-lg text-sm leading-7 text-primary-foreground/60">A trusted partner for financial, insurance and business solutions under one roof.</p>
-              <div className="mt-10 flex flex-wrap gap-3"><Button asChild variant="gold" size="lg"><a href="#contact">Talk to an Advisor <ArrowRight /></a></Button><Button asChild variant="heroOutline" size="lg"><a href="#services">Explore Our Services <ArrowDownRight /></a></Button></div>
-            </div>
-            <div className="hidden border-l border-gold/60 pl-6 lg:block"><p className="font-display text-4xl text-gold">One team.<br />One place.</p><p className="mt-5 text-xs leading-6 text-primary-foreground/60">Thoughtful advice across protection, capital, growth and business continuity.</p></div>
+          <div className="mx-auto flex max-w-5xl flex-col items-center text-center animate-rise-in">
+            <BrandMark />
+            <div className="mt-12 flex items-center justify-center gap-4 text-[10px] font-semibold uppercase tracking-[0.32em] text-gold"><span className="h-px w-10 bg-gold" />Jaipur &amp; Rajasthan<span className="h-px w-10 bg-gold" /></div>
+            <h1 className="mt-8 font-display text-[clamp(2.6rem,8vw,6rem)] leading-[1.02] text-primary-foreground">
+              <span className="block sm:whitespace-nowrap">Building Wealth.</span>
+              <span className="block text-gold sm:whitespace-nowrap">Securing Futures.</span>
+            </h1>
+            <p className="mt-8 max-w-xl text-lg leading-8 text-primary-foreground/80">Complete Financial Solutions for Individuals and Businesses.</p>
+            <p className="mt-3 max-w-lg text-sm leading-7 text-primary-foreground/60">A trusted partner for financial, insurance and business solutions under one roof.</p>
+            <div className="mt-10 flex flex-wrap items-center justify-center gap-3"><Button asChild variant="gold" size="lg"><a href="#contact">Talk to an Advisor <ArrowRight /></a></Button><Button asChild variant="heroOutline" size="lg"><a href="#services">Explore Our Services <ArrowDownRight /></a></Button></div>
+            <div className="mt-14 hidden items-center justify-center gap-6 lg:flex"><span className="gold-line w-16" /><p className="font-display text-2xl text-gold">One team. One place.</p><span className="gold-line w-16" /></div>
           </div>
-          <a href="#about" className="mt-20 flex items-center gap-3 text-[10px] font-semibold uppercase tracking-[0.28em] text-primary-foreground/60 transition-colors hover:text-gold"><span className="grid size-8 place-items-center rounded-full border border-primary-foreground/30"><ChevronDown className="size-4" /></span> Discover CapitalNest</a>
+          <a href="#about" className="mx-auto mt-20 flex w-fit items-center gap-3 text-[10px] font-semibold uppercase tracking-[0.28em] text-primary-foreground/60 transition-colors hover:text-gold"><span className="grid size-8 place-items-center rounded-full border border-primary-foreground/30"><ChevronDown className="size-4" /></span> Discover CapitalNest</a>
         </div>
       </section>
 
