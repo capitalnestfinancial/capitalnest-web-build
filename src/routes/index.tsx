@@ -32,7 +32,7 @@ import markAsset from "@/assets/capitalnest-mark.png.asset.json";
 const navItems = [
   ["About", "about"],
   ["Services", "services"],
-  ["Corporate Insurance", "corporate-insurance"],
+  ["Insurance", "corporate-insurance"],
   ["Why Us", "why-us"],
   ["How We Work", "how-we-work"],
   ["Contact", "contact"],
@@ -83,12 +83,23 @@ const services = [
   },
 ] as const;
 
-const corporateServices = [
+const insuranceServices = [
   ["01", "Coverage Assessment & Policy Review", "A structured review of sums insured, terms, exclusions, warranties, gaps and overlaps."],
-  ["02", "Premium Optimisation & Risk Improvement", "Benchmark premiums against market standards and improve coverage quality without compromising protection."],
-  ["03", "Complimentary Claims Assistance", "Guidance on documentation, notifications, survey coordination and disputed or partially settled claims."],
+  ["02", "Premium Optimisation & Risk Improvement", "Benchmark premiums against current market standards and improve coverage without compromising protection."],
+  ["03", "Complimentary Claims Assistance", "Guidance with documentation, notifications, survey coordination and disputed or partially settled claims."],
   ["04", "Ongoing Advisory & Renewal Support", "A continuing point of contact for renewal negotiations, claims assistance and coverage reviews throughout the year."],
 ] as const;
+
+const individualCovers = [
+  "Term Life Insurance",
+  "Health / Mediclaim (Individual & Family Floater)",
+  "Motor Insurance (Car / Two-Wheeler)",
+  "Home / Property Insurance",
+  "Personal Accident Cover",
+  "Critical Illness Cover",
+  "Travel Insurance",
+  "Child / Education-Linked Plans",
+];
 
 const corporateCovers = [
   "Fire & Special Perils",
@@ -233,8 +244,8 @@ function Index() {
         <div className="section-shell"><SectionHeading eyebrow="Our Services" title="Complete Financial Solutions Under One Roof" copy="A considered portfolio of services for personal milestones, business decisions and the risks in between." light /><div className="mt-14 grid gap-px bg-gold/40 sm:grid-cols-2 lg:grid-cols-3">{services.map(({ number, title, icon: Icon, intro, items }) => <article key={title} className="group bg-primary p-7 transition-colors duration-300 hover:bg-navy-soft sm:p-8"><div className="flex items-start justify-between gap-4"><span className="font-display text-3xl text-gold/70">{number}</span><Icon className="size-7 stroke-1 text-gold transition-transform duration-300 group-hover:-translate-y-1" /></div><h3 className="mt-12 font-display text-3xl text-primary-foreground">{title}</h3><p className="mt-3 min-h-14 text-sm leading-6 text-primary-foreground/60">{intro}</p><ul className="mt-7 space-y-2 border-t border-primary-foreground/15 pt-5">{items.map((item) => <li key={item} className="flex gap-2 text-sm text-primary-foreground/80"><span className="mt-2 size-1 shrink-0 rounded-full bg-gold" />{item}</li>)}</ul></article>)}</div></div>
       </section>
 
-      <section id="corporate-insurance" className="bg-ivory py-24 sm:py-32">
-        <div className="section-shell"><div className="grid gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:gap-24"><div><SectionHeading eyebrow="Corporate Insurance Advisory" title="Corporate Insurance Advisory & Risk Management" copy="Independent guidance on coverage, premium and claims — for corporates in Jaipur." /><a href="#contact" className="mt-9 inline-flex items-center gap-3 text-sm font-semibold uppercase tracking-[0.16em] text-primary transition-colors hover:text-gold">Review your programme <ArrowRight className="size-4" /></a></div><div><p className="text-lg leading-8 text-primary">We help businesses strengthen risk protection while controlling insurance cost. Rather than selling a single insurer's product, we act as your organisation's dedicated insurance advisor.</p><p className="mt-6 text-sm leading-7 text-muted-foreground">Our engagement is built around two commitments: helping you get the most efficient premium for the coverage you genuinely need, and standing beside you — at no extra cost — when a claim has to be made.</p></div></div><div className="mt-16 grid gap-px bg-border sm:grid-cols-2">{corporateServices.map(([number, title, copy]) => <article key={number} className="bg-card p-7 sm:p-9"><span className="font-display text-4xl text-gold">{number}</span><h3 className="mt-8 max-w-xs font-display text-3xl leading-tight text-primary">{title}</h3><p className="mt-4 max-w-sm text-sm leading-7 text-muted-foreground">{copy}</p></article>)}</div><div className="mt-16 grid gap-8 border-t border-border pt-10 lg:grid-cols-[0.7fr_1.3fr]"><div><p className="text-[11px] font-semibold uppercase tracking-[0.25em] text-gold">Corporate covers reviewed</p><p className="mt-4 text-sm leading-7 text-muted-foreground">A structured audit against your actual operational risk exposure.</p></div><div className="grid gap-x-8 gap-y-3 sm:grid-cols-2 lg:grid-cols-3">{corporateCovers.map((cover) => <div key={cover} className="flex items-start gap-3 text-sm text-primary"><Check className="mt-0.5 size-4 shrink-0 text-gold" />{cover}</div>)}</div></div></div>
+       <section id="corporate-insurance" className="bg-ivory py-24 sm:py-32">
+         <div className="section-shell"><div className="grid gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:gap-24"><div><SectionHeading eyebrow="Insurance Advisory" title="Insurance Advisory & Risk Management" copy="Independent guidance on coverage, premium and claims — for individuals, families and businesses across Jaipur and Rajasthan." /><a href="#contact" className="mt-9 inline-flex items-center gap-3 text-sm font-semibold uppercase tracking-[0.16em] text-primary transition-colors hover:text-gold">Review your insurance <ArrowRight className="size-4" /></a></div><div><p className="text-lg leading-8 text-primary">We help individuals, families and businesses build the right protection — without over-insuring or under-insuring. Rather than selling a single insurer's product, we act as your dedicated insurance advisor, reviewing what you already hold and identifying gaps, overlaps and better options across the market.</p><p className="mt-6 text-sm leading-7 text-muted-foreground">Our engagement is built around two commitments: helping you get the most efficient premium for the coverage you genuinely need, and standing beside you — at no extra cost — when a claim actually has to be made.</p></div></div><div className="mt-16 grid gap-px bg-border sm:grid-cols-2">{insuranceServices.map(([number, title, copy]) => <article key={number} className="bg-card p-7 sm:p-9"><span className="font-display text-4xl text-gold">{number}</span><h3 className="mt-8 max-w-xs font-display text-3xl leading-tight text-primary">{title}</h3><p className="mt-4 max-w-sm text-sm leading-7 text-muted-foreground">{copy}</p></article>)}</div><div className="mt-16 grid gap-10 border-t border-border pt-10 lg:grid-cols-2 lg:gap-16"><div><p className="text-[11px] font-semibold uppercase tracking-[0.25em] text-gold">For individuals & families</p><p className="mt-4 text-sm leading-7 text-muted-foreground">Life-stage advisory to protect the people, plans and possessions that matter most.</p><div className="mt-7 grid gap-x-8 gap-y-3 sm:grid-cols-2">{individualCovers.map((cover) => <div key={cover} className="flex items-start gap-3 text-sm text-primary"><Check className="mt-0.5 size-4 shrink-0 text-gold" />{cover}</div>)}</div></div><div><p className="text-[11px] font-semibold uppercase tracking-[0.25em] text-gold">For businesses & corporates</p><p className="mt-4 text-sm leading-7 text-muted-foreground">Risk-improvement advisory for operational, people and liability exposures.</p><div className="mt-7 grid gap-x-8 gap-y-3 sm:grid-cols-2">{corporateCovers.map((cover) => <div key={cover} className="flex items-start gap-3 text-sm text-primary"><Check className="mt-0.5 size-4 shrink-0 text-gold" />{cover}</div>)}</div></div></div></div>
       </section>
 
       <section id="why-us" className="bg-navy-deep py-24 text-primary-foreground sm:py-32"><div className="section-shell"><SectionHeading eyebrow="Why CapitalNest" title="Why Corporates Partner With Us" copy="A relationship built on independence, evidence and support that stays close to the decision." light /><div className="mt-14 grid gap-px bg-gold/40 sm:grid-cols-2 lg:grid-cols-3">{reasons.map(([title, copy, Icon]) => <article key={title} className="bg-navy-deep p-7 sm:p-8"><Icon className="size-7 stroke-1 text-gold" /><h3 className="mt-10 font-display text-2xl text-primary-foreground">{title}</h3><p className="mt-3 text-sm leading-7 text-primary-foreground/60">{copy}</p></article>)}</div></div></section>
