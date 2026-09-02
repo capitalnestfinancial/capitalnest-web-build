@@ -209,7 +209,6 @@ function Index() {
         <div className="section-shell w-full">
           <div className="mx-auto flex max-w-5xl flex-col items-center text-center animate-rise-in">
             <BrandMark />
-            <div className="mt-12 flex items-center justify-center gap-4 text-[10px] font-semibold uppercase tracking-[0.32em] text-gold"><span className="h-px w-10 bg-gold" /><span className="sr-only"> </span><span className="h-px w-10 bg-gold" /></div>
             <h1 className="mt-8 font-display text-[clamp(2.6rem,8vw,6rem)] leading-[1.02] text-primary-foreground">
               <span className="block sm:whitespace-nowrap">Building Wealth.</span>
               <span className="block text-gold sm:whitespace-nowrap">Securing Futures.</span>
