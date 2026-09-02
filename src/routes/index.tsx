@@ -113,6 +113,140 @@ const corporateCovers = [
   "Other Corporate Covers",
 ];
 
+type AdvisoryDetail = {
+  id: string;
+  eyebrow: string;
+  title: string;
+  description: string;
+  rightColumn: [string, string];
+  linkLabel: string;
+  services: readonly [string, string, string][];
+  audienceLabel: string;
+  audienceDescription: string;
+  audienceItems: readonly string[];
+  businessLabel: string;
+  businessDescription: string;
+  businessItems: readonly string[];
+};
+
+const advisoryDetails: readonly AdvisoryDetail[] = [
+  {
+    id: "loans",
+    eyebrow: "Loan Advisory",
+    title: "Loan Advisory & Credit Structuring",
+    description: "Independent guidance on eligibility, lender comparison and terms — for individuals, families and businesses across Jaipur and Rajasthan.",
+    rightColumn: [
+      "The lowest rate you see advertised and the rate you actually qualify for are rarely the same number — and the gap is where most borrowers overpay for years without realising it. In Jaipur, we work as loan advisors who sit on your side of the table: comparing what's genuinely available across banks and NBFCs for your specific profile, structuring the application so approval doesn't stall, and pushing for the number that actually lands on your EMI.",
+      "We don't earn more for steering you toward one lender over another, so the comparison you get is real. And we don't disappear after disbursement — if a sharper rate opens up two years into your loan, we're the ones telling you, at no extra cost.",
+    ],
+    linkLabel: "Discuss your borrowing need",
+    services: [
+      ["01", "Loan Requirement Assessment & Eligibility Check", "We review your borrowing need, repayment capacity and credit profile to identify the right loan type and amount — not simply the maximum available."],
+      ["02", "Loan Structuring & Lender Comparison", "We benchmark interest rates, processing fees, tenure and terms across multiple banks and NBFCs, then negotiate on your behalf."],
+      ["03", "Documentation & Application Support", "We prepare and vet documentation, coordinate with the lender and help resolve queries so applications move with fewer delays."],
+      ["04", "Post-Disbursement & Refinance Support", "We monitor your loan against current market benchmarks and guide balance transfers, refinancing, part-payments and restructuring."],
+    ],
+    audienceLabel: "For individuals & families",
+    audienceDescription: "Thoughtful credit guidance for personal milestones and planned borrowing.",
+    audienceItems: ["Home Loan", "Loan Against Property", "Personal Loan", "Car / Vehicle Loan", "Education Loan", "Loan Against Securities / FD"],
+    businessLabel: "For businesses & corporates",
+    businessDescription: "Structured finance support for working capital, growth and business continuity.",
+    businessItems: ["Business / Working Capital Loan", "Term Loan", "Overdraft / Cash Credit", "Machinery & Equipment Loan", "Trade Finance / Letter of Credit", "Loan Restructuring & Refinancing"],
+  },
+  {
+    id: "investments",
+    eyebrow: "Investment Advisory",
+    title: "Investment Advisory & Portfolio Management",
+    description: "Goal-led investment guidance for individuals, families and businesses across Jaipur and Rajasthan.",
+    rightColumn: [
+      "Money compounds quietly when nobody interferes with it. Most portfolios don't underperform because the funds were wrong — they underperform because someone panicked in a downturn, chased last year's best performer, or simply never looked at the portfolio again after setting it up. In Jaipur, we work with individuals, families and businesses to build investments around what they're actually saving for — not around what's trending this quarter.",
+      "We stay involved after the plan is made, not just at the start. That means periodic reviews, honest conversations about what needs rebalancing, and no product bias — we're not paid more for recommending one fund house over another.",
+    ],
+    linkLabel: "Review your portfolio",
+    services: [
+      ["01", "Goal-Based Investment Planning", "We map investments to retirement, education, wealth creation or business surplus goals, with allocation built around each time horizon and risk appetite."],
+      ["02", "Portfolio Review & Rebalancing", "We audit current holdings across funds, equity, deposits and bonds to identify concentration, overlap, underperformance and allocation drift."],
+      ["03", "Product & Fund Selection Advisory", "We compare funds, AMCs, fixed-income instruments and deposits on track record, quality and cost — not on product bias."],
+      ["04", "Ongoing Portfolio Monitoring & Reporting", "Periodic reviews, consolidated reporting and life-stage adjustments keep your strategy aligned as markets and circumstances change."],
+    ],
+    audienceLabel: "For individuals & families",
+    audienceDescription: "A considered investment plan for the goals that matter over time.",
+    audienceItems: ["Mutual Funds (SIP / Lump-sum)", "Equity Investment Advisory", "Fixed Deposits & Bonds", "PPF / NPS / Retirement Plans", "Tax-Saving Investments (ELSS)", "Child Education & Wealth Plans"],
+    businessLabel: "For businesses & corporates",
+    businessDescription: "Practical oversight for surplus cash, treasury and long-term diversification.",
+    businessItems: ["Corporate Surplus Fund Management", "Corporate Fixed Deposits", "Treasury & Liquidity Investments", "Structured & Debt Investments", "Employee Retirement / Gratuity Funds", "Portfolio Diversification Advisory"],
+  },
+  {
+    id: "taxation",
+    eyebrow: "Tax Advisory",
+    title: "Taxation Advisory & Compliance",
+    description: "Proactive tax planning, accurate filing and continuing support for individuals, families and businesses across Jaipur and Rajasthan.",
+    rightColumn: [
+      "Nobody plans their taxes in March. Everybody scrambles through them. That's the entire difference between tax filing and tax planning — one is something that happens to you once a year, the other is a decision you make every month that happens to make March uneventful. We work with individuals, families and businesses across Jaipur to build that second habit.",
+      "Where planning wasn't done in time, or a notice shows up unannounced, we don't leave existing clients to handle it alone — representation and response during scrutiny or assessment comes built into the relationship, not billed as a separate emergency.",
+    ],
+    linkLabel: "Plan your taxes",
+    services: [
+      ["01", "Tax Planning & Advisory", "We review income, investments and expenses well before filing to structure deductions, exemptions, advance tax and different income streams efficiently."],
+      ["02", "Income Tax & GST Return Filing", "Accurate, on-time income tax and GST filing backed by a review of Form 26AS, AIS, TDS credits, capital gains and other income heads."],
+      ["03", "TDS & Regulatory Compliance", "We track TDS / TCS computation, deposits, quarterly returns, statutory dues and the tax rates and thresholds that apply."],
+      ["04", "Notice, Assessment & Audit Support", "We review notices, draft responses and provide representation and guidance during assessments, scrutiny, tax audits and documentation requests."],
+    ],
+    audienceLabel: "For individuals & families",
+    audienceDescription: "Clear advice for personal income, investments and annual obligations.",
+    audienceItems: ["Income Tax Return Filing", "Tax Planning & Investment Structuring", "Capital Gains Tax Advisory", "NRI Taxation", "Advance Tax Computation", "Notice & Assessment Support"],
+    businessLabel: "For businesses & corporates",
+    businessDescription: "Year-round compliance support that keeps business decisions moving.",
+    businessItems: ["GST Registration & Return Filing", "Corporate & Business Tax Filing", "TDS / TCS Compliance", "Tax Audit Support", "GST Reconciliation & Input Credit Review", "Assessment & Scrutiny Representation"],
+  },
+  {
+    id: "business-registration",
+    eyebrow: "Business Advisory",
+    title: "Business Registration & Entity Structuring",
+    description: "Practical guidance for choosing, registering and setting up the right legal structure across Jaipur and Rajasthan.",
+    rightColumn: [
+      "Before a business has a product, a customer, or a rupee of revenue, it already has a structure — and that structure quietly decides how much tax it pays, how exposed the founder's personal assets are, and how easily it can raise money two years down the line. Most founders get this decision made for them by whoever files the paperwork fastest.",
+      "We slow that one decision down before speeding everything after it up. Working with founders and businesses across Jaipur, we help you choose the entity that actually fits your plans — then handle the registration and the statutory filings that follow it, correctly, the first time.",
+    ],
+    linkLabel: "Structure your business",
+    services: [
+      ["01", "Entity Selection & Structuring Advisory", "We compare proprietorship, partnership, LLP and private limited structures based on liability, taxation, funding plans, scale and compliance load."],
+      ["02", "Company / Firm Registration", "We manage name approval, incorporation documents, authority filings and coordination for director identification and digital signatures."],
+      ["03", "Statutory Registrations & Licenses", "We handle the additional registrations many new businesses need, including GST, MSME / Udyam, IEC, Shops & Establishment and Professional Tax."],
+      ["04", "Post-Registration Compliance Setup", "We help establish statutory registers, initial filings, bank documentation and a practical framework for ongoing ROC and regulatory compliance."],
+    ],
+    audienceLabel: "For individuals & start-ups",
+    audienceDescription: "The right foundation for a new venture, professional practice or family business.",
+    audienceItems: ["Proprietorship Registration", "Partnership Firm Registration", "LLP Registration", "Private Limited Company Registration", "MSME / Udyam Registration", "Startup India Recognition"],
+    businessLabel: "For businesses & corporates",
+    businessDescription: "Registration and restructuring support as the business grows and changes.",
+    businessItems: ["GST Registration", "Import Export Code (IEC)", "Shops & Establishment License", "Professional Tax Registration", "Section 8 / Not-for-Profit Registration", "Entity Conversion & Restructuring"],
+  },
+  {
+    id: "trademark-compliance",
+    eyebrow: "Brand & Compliance Advisory",
+    title: "Trademark & Regulatory Compliance",
+    description: "Brand protection and ongoing compliance support for individuals, professionals and businesses across Jaipur and Rajasthan.",
+    rightColumn: [
+      "A name, a logo, a brand people recognise on sight — none of it legally belongs to you until it's registered. Until then, it's just something you're using and hoping nobody files first. We help individuals, professionals and businesses across Jaipur close that gap, and then keep it closed.",
+      "Because registration isn't a one-time event — renewals lapse, objections get raised, compliance calendars get missed in the middle of running an actual business. We track the dates, handle the filings, and step in when an objection lands, so protecting what you've built doesn't depend on you remembering to.",
+    ],
+    linkLabel: "Protect your brand",
+    services: [
+      ["01", "Trademark Search & Registration", "We search for availability and conflicts, classify goods and services, prepare and file the application, and track it through examination."],
+      ["02", "Brand Protection & Renewal", "We handle objections and oppositions, draft examination responses, track renewals and monitor potential infringement."],
+      ["03", "Statutory & ROC Compliance", "For companies and LLPs, we manage annual ROC filings, financial statements, statutory registers, minutes and director or shareholder filings."],
+      ["04", "Ongoing Regulatory Advisory", "Continuing guidance covers regulatory changes, licence renewals, intellectual property protection and business changes affecting compliance."],
+    ],
+    audienceLabel: "For individuals & professionals",
+    audienceDescription: "Protect the identity you are building and keep it current.",
+    audienceItems: ["Trademark Search & Filing", "Trademark Objection / Opposition Handling", "Copyright Registration", "Trademark Renewal", "Brand Infringement Monitoring"],
+    businessLabel: "For businesses & corporates",
+    businessDescription: "A dependable compliance calendar for the obligations behind the brand.",
+    businessItems: ["ROC Annual Filings", "Company Compliance Calendar Management", "Trademark Portfolio Management", "Regulatory Filings & License Renewals", "Director & Shareholder Compliance"],
+  },
+];
+
 const reasons = [
   ["Independent advice", "Not tied to a single insurance company.", Network],
   ["Local presence in Jaipur", "Hands-on, relationship-based service.", MapPin],
@@ -172,6 +306,46 @@ function SectionHeading({ eyebrow, title, copy, light = false }: { eyebrow: stri
       <h2 className={`font-display text-4xl leading-[0.98] sm:text-5xl md:text-6xl ${light ? "text-primary-foreground" : "text-primary"}`}>{title}</h2>
       {copy ? <p className={`mt-6 max-w-xl text-base leading-8 ${light ? "text-primary-foreground/70" : "text-muted-foreground"}`}>{copy}</p> : null}
     </div>
+  );
+}
+
+function AdvisoryDetailSection({ detail }: { detail: AdvisoryDetail }) {
+  return (
+    <section id={detail.id} className="bg-background py-24 sm:py-32">
+      <div className="section-shell">
+        <div className="grid gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:gap-24">
+          <div>
+            <SectionHeading eyebrow={detail.eyebrow} title={detail.title} copy={detail.description} />
+            <a href="#contact" className="mt-9 inline-flex items-center gap-3 text-sm font-semibold uppercase tracking-[0.16em] text-primary transition-colors hover:text-gold">{detail.linkLabel} <ArrowRight className="size-4" /></a>
+          </div>
+          <div>
+            <p className="text-lg leading-8 text-primary">{detail.rightColumn[0]}</p>
+            <p className="mt-6 text-sm leading-7 text-muted-foreground">{detail.rightColumn[1]}</p>
+          </div>
+        </div>
+        <div className="mt-16 grid gap-px bg-border sm:grid-cols-2">
+          {detail.services.map(([number, title, copy]) => (
+            <article key={number} className="bg-card p-7 sm:p-9">
+              <span className="font-display text-4xl text-gold">{number}</span>
+              <h3 className="mt-8 max-w-xs font-display text-3xl leading-tight text-primary">{title}</h3>
+              <p className="mt-4 max-w-sm text-sm leading-7 text-muted-foreground">{copy}</p>
+            </article>
+          ))}
+        </div>
+        <div className="mt-16 grid gap-10 border-t border-border pt-10 lg:grid-cols-2 lg:gap-16">
+          <div>
+            <p className="text-[11px] font-semibold uppercase tracking-[0.25em] text-gold">{detail.audienceLabel}</p>
+            <p className="mt-4 text-sm leading-7 text-muted-foreground">{detail.audienceDescription}</p>
+            <div className="mt-7 grid gap-x-8 gap-y-3 sm:grid-cols-2">{detail.audienceItems.map((item) => <div key={item} className="flex items-start gap-3 text-sm text-primary"><Check className="mt-0.5 size-4 shrink-0 text-gold" />{item}</div>)}</div>
+          </div>
+          <div>
+            <p className="text-[11px] font-semibold uppercase tracking-[0.25em] text-gold">{detail.businessLabel}</p>
+            <p className="mt-4 text-sm leading-7 text-muted-foreground">{detail.businessDescription}</p>
+            <div className="mt-7 grid gap-x-8 gap-y-3 sm:grid-cols-2">{detail.businessItems.map((item) => <div key={item} className="flex items-start gap-3 text-sm text-primary"><Check className="mt-0.5 size-4 shrink-0 text-gold" />{item}</div>)}</div>
+          </div>
+        </div>
+      </div>
+    </section>
   );
 }
 
