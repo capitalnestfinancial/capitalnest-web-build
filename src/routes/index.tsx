@@ -33,6 +33,11 @@ const navItems = [
   ["About", "about"],
   ["Services", "services"],
   ["Insurance", "corporate-insurance"],
+  ["Loans", "loans"],
+  ["Investments", "investments"],
+  ["Taxation", "taxation"],
+  ["Registration", "business-registration"],
+  ["Trademark", "trademark-compliance"],
   ["Why Us", "why-us"],
   ["How We Work", "how-we-work"],
   ["Contact", "contact"],
@@ -309,9 +314,9 @@ function SectionHeading({ eyebrow, title, copy, light = false }: { eyebrow: stri
   );
 }
 
-function AdvisoryDetailSection({ detail }: { detail: AdvisoryDetail }) {
+function AdvisoryDetailSection({ detail, alt = false }: { detail: AdvisoryDetail; alt?: boolean }) {
   return (
-    <section id={detail.id} className="bg-background py-24 sm:py-32">
+    <section id={detail.id} className={`${alt ? "bg-ivory" : "bg-background"} py-24 sm:py-32`}>
       <div className="section-shell">
         <div className="grid gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:gap-24">
           <div>
@@ -421,6 +426,8 @@ function Index() {
        <section id="corporate-insurance" className="bg-ivory py-24 sm:py-32">
          <div className="section-shell"><div className="grid gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:gap-24"><div><SectionHeading eyebrow="Insurance Advisory" title="Insurance Advisory & Risk Management" copy="Independent guidance on coverage, premium and claims — for individuals, families and businesses across Jaipur and Rajasthan." /><a href="#contact" className="mt-9 inline-flex items-center gap-3 text-sm font-semibold uppercase tracking-[0.16em] text-primary transition-colors hover:text-gold">Review your insurance <ArrowRight className="size-4" /></a></div><div><p className="text-lg leading-8 text-primary">We help individuals, families and businesses build the right protection — without over-insuring or under-insuring. Rather than selling a single insurer's product, we act as your dedicated insurance advisor, reviewing what you already hold and identifying gaps, overlaps and better options across the market.</p><p className="mt-6 text-sm leading-7 text-muted-foreground">Our engagement is built around two commitments: helping you get the most efficient premium for the coverage you genuinely need, and standing beside you — at no extra cost — when a claim actually has to be made.</p></div></div><div className="mt-16 grid gap-px bg-border sm:grid-cols-2">{insuranceServices.map(([number, title, copy]) => <article key={number} className="bg-card p-7 sm:p-9"><span className="font-display text-4xl text-gold">{number}</span><h3 className="mt-8 max-w-xs font-display text-3xl leading-tight text-primary">{title}</h3><p className="mt-4 max-w-sm text-sm leading-7 text-muted-foreground">{copy}</p></article>)}</div><div className="mt-16 grid gap-10 border-t border-border pt-10 lg:grid-cols-2 lg:gap-16"><div><p className="text-[11px] font-semibold uppercase tracking-[0.25em] text-gold">For individuals & families</p><p className="mt-4 text-sm leading-7 text-muted-foreground">Life-stage advisory to protect the people, plans and possessions that matter most.</p><div className="mt-7 grid gap-x-8 gap-y-3 sm:grid-cols-2">{individualCovers.map((cover) => <div key={cover} className="flex items-start gap-3 text-sm text-primary"><Check className="mt-0.5 size-4 shrink-0 text-gold" />{cover}</div>)}</div></div><div><p className="text-[11px] font-semibold uppercase tracking-[0.25em] text-gold">For businesses & corporates</p><p className="mt-4 text-sm leading-7 text-muted-foreground">Risk-improvement advisory for operational, people and liability exposures.</p><div className="mt-7 grid gap-x-8 gap-y-3 sm:grid-cols-2">{corporateCovers.map((cover) => <div key={cover} className="flex items-start gap-3 text-sm text-primary"><Check className="mt-0.5 size-4 shrink-0 text-gold" />{cover}</div>)}</div></div></div></div>
       </section>
+
+      {advisoryDetails.map((detail, index) => <AdvisoryDetailSection key={detail.id} detail={detail} alt={index % 2 === 1} />)}
 
       <section id="why-us" className="bg-navy-deep py-24 text-primary-foreground sm:py-32"><div className="section-shell"><SectionHeading eyebrow="Why CapitalNest" title="Why Corporates Partner With Us" copy="A relationship built on independence, evidence and support that stays close to the decision." light /><div className="mt-14 grid gap-px bg-gold/40 sm:grid-cols-2 lg:grid-cols-3">{reasons.map(([title, copy, Icon]) => <article key={title} className="bg-navy-deep p-7 sm:p-8"><Icon className="size-7 stroke-1 text-gold" /><h3 className="mt-10 font-display text-2xl text-primary-foreground">{title}</h3><p className="mt-3 text-sm leading-7 text-primary-foreground/60">{copy}</p></article>)}</div></div></section>
 
