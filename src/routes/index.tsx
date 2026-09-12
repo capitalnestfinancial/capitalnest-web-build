@@ -97,7 +97,7 @@ const insuranceServices = [
 
 const individualCovers = [
   "Term Life Insurance",
-  "Health / Mediclaim (Individual & Family Floater)",
+  "Health Insurance (Individual & Family Floater)",
   "Motor Insurance (Car / Two-Wheeler)",
   "Home / Property Insurance",
   "Personal Accident Cover",
@@ -110,12 +110,12 @@ const corporateCovers = [
   "Fire & Special Perils",
   "Burglary",
   "Marine / Transit",
-  "Group Mediclaim",
-  "Group Personal Accident",
+  "Group Health & Accidental Insurance",
+  "      Professional Indemnity",
   "Directors & Officers Liability",
   "Public / Product Liability",
   "Workmen's Compensation",
-  "Other Corporate Covers",
+  "Other Corporate Insurance",
 ];
 
 type AdvisoryDetail = {
@@ -139,9 +139,9 @@ const advisoryDetails: readonly AdvisoryDetail[] = [
     id: "loans",
     eyebrow: "Loan Advisory",
     title: "Loan Advisory & Credit Structuring",
-    description: "Independent guidance on eligibility, lender comparison and terms — for individuals, families and businesses across Jaipur and Rajasthan.",
+    description: "From home and business loans to vehicle finance & personal loan, we help you find the right financing solution tailored to your needs. Our expert guidance makes borrowing simpler, smarter, and more transparent.",
     rightColumn: [
-      "The lowest rate you see advertised and the rate you actually qualify for are rarely the same number — and the gap is where most borrowers overpay for years without realising it. In Jaipur, we work as loan advisors who sit on your side of the table: comparing what's genuinely available across banks and NBFCs for your specific profile, structuring the application so approval doesn't stall, and pushing for the number that actually lands on your EMI.",
+      "The lowest rate you see advertised and the rate you actually qualify for are rarely the same number — and the gap is where most borrowers overpay for years without realizing it. We work as loan advisors who sit on your side of the table, comparing what's genuinely available across banks and NBFCs for your specific profile, structuring the application so approval doesn't stall, and pushing for the number that actually lands on your EMI.",
       "We don't earn more for steering you toward one lender over another, so the comparison you get is real. And we don't disappear after disbursement — if a sharper rate opens up two years into your loan, we're the ones telling you, at no extra cost.",
     ],
     linkLabel: "Discuss your borrowing need",
@@ -162,10 +162,10 @@ const advisoryDetails: readonly AdvisoryDetail[] = [
     id: "investments",
     eyebrow: "Investment Advisory",
     title: "Investment Advisory & Portfolio Management",
-    description: "Goal-led investment guidance for individuals, families and businesses across Jaipur and Rajasthan.",
+    description: "Invest with clarity, confidence and purpose. Our investment advisory services help you choose suitable investment solutions based on your financial goals, risk profile and long-term wealth creation objectives.",
     rightColumn: [
-      "Money compounds quietly when nobody interferes with it. Most portfolios don't underperform because the funds were wrong — they underperform because someone panicked in a downturn, chased last year's best performer, or simply never looked at the portfolio again after setting it up. In Jaipur, we work with individuals, families and businesses to build investments around what they're actually saving for — not around what's trending this quarter.",
-      "We stay involved after the plan is made, not just at the start. That means periodic reviews, honest conversations about what needs rebalancing, and no product bias — we're not paid more for recommending one fund house over another.",
+      "Money compounds quietly when nobody interferes with it. Most portfolios don't underperform because the funds were wrong — they underperform because someone panicked in a downturn, chased last year's best performer, or simply never looked at the portfolio again after setting it up. At CapitalNest Financial, we help you understand different investment avenues and choose solutions aligned with your financial goals, investment horizon, risk profile and liquidity requirements.",
+      "We stay involved after the plan is made, not just at the start. That means periodic reviews, honest conversations about what needs rebalancing, our team provides personalized guidance to help you make informed decisions.",
     ],
     linkLabel: "Review your portfolio",
     services: [
@@ -185,16 +185,16 @@ const advisoryDetails: readonly AdvisoryDetail[] = [
     id: "taxation",
     eyebrow: "Tax Advisory",
     title: "Taxation Advisory & Compliance",
-    description: "Proactive tax planning, accurate filing and continuing support for individuals, families and businesses across Jaipur and Rajasthan.",
+    description: "Simplify your accounting and taxation requirements with expert guidance. From ITR filing and GST compliance to accounting, audits and tax planning, we help you stay compliant and financially organized.",
     rightColumn: [
-      "Nobody plans their taxes in March. Everybody scrambles through them. That's the entire difference between tax filing and tax planning — one is something that happens to you once a year, the other is a decision you make every month that happens to make March uneventful. We work with individuals, families and businesses across Jaipur to build that second habit.",
+      "Stay compliant, organized, and financially prepared with our comprehensive audit and taxation solutions. We assist individuals and businesses with ITR Filing, Accounting & Audit, GST Compliance, Tax Planning, and related financial requirements, helping you manage your obligations efficiently and make informed financial decisions.",
       "Where planning wasn't done in time, or a notice shows up unannounced, we don't leave existing clients to handle it alone — representation and response during scrutiny or assessment comes built into the relationship, not billed as a separate emergency.",
     ],
     linkLabel: "Plan your taxes",
     services: [
       ["01", "Tax Planning & Advisory", "We review income, investments and expenses well before filing to structure deductions, exemptions, advance tax and different income streams efficiently."],
       ["02", "Income Tax & GST Return Filing", "Accurate, on-time income tax and GST filing backed by a review of Form 26AS, AIS, TDS credits, capital gains and other income heads."],
-      ["03", "TDS & Regulatory Compliance", "We track TDS / TCS computation, deposits, quarterly returns, statutory dues and the tax rates and thresholds that apply."],
+      ["03", "Audit & Regulatory Compliance", "We provide comprehensive audit, accounting, taxation, and regulatory compliance support to help businesses stay accurate, transparent, and compliant"],
       ["04", "Notice, Assessment & Audit Support", "We review notices, draft responses and provide representation and guidance during assessments, scrutiny, tax audits and documentation requests."],
     ],
     audienceLabel: "For individuals & families",
@@ -202,13 +202,13 @@ const advisoryDetails: readonly AdvisoryDetail[] = [
     audienceItems: ["Income Tax Return Filing", "Tax Planning & Investment Structuring", "Capital Gains Tax Advisory", "NRI Taxation", "Advance Tax Computation", "Notice & Assessment Support"],
     businessLabel: "For businesses & corporates",
     businessDescription: "Year-round compliance support that keeps business decisions moving.",
-    businessItems: ["GST Registration & Return Filing", "Corporate & Business Tax Filing", "TDS / TCS Compliance", "Tax Audit Support", "GST Reconciliation & Input Credit Review", "Assessment & Scrutiny Representation"],
+    businessItems: ["GST Registration & Return Filing", "Corporate & Business Tax Filing", "TDS / TCS Compliance", "Tax Audit ", "GST Reconciliation & Input Credit Review", "Assessment & Scrutiny Representation"],
   },
   {
     id: "business-registration",
     eyebrow: "Business Advisory",
     title: "Business Registration & Entity Structuring",
-    description: "Practical guidance for choosing, registering and setting up the right legal structure across Jaipur and Rajasthan.",
+    description: "Practical guidance for choosing, registering and setting up the right legal structure.",
     rightColumn: [
       "Before a business has a product, a customer, or a rupee of revenue, it already has a structure — and that structure quietly decides how much tax it pays, how exposed the founder's personal assets are, and how easily it can raise money two years down the line. Most founders get this decision made for them by whoever files the paperwork fastest.",
       "We slow that one decision down before speeding everything after it up. Working with founders and businesses across Jaipur, we help you choose the entity that actually fits your plans — then handle the registration and the statutory filings that follow it, correctly, the first time.",
@@ -231,9 +231,9 @@ const advisoryDetails: readonly AdvisoryDetail[] = [
     id: "trademark-compliance",
     eyebrow: "Brand & Compliance Advisory",
     title: "Trademark & Regulatory Compliance",
-    description: "Brand protection and ongoing compliance support for individuals, professionals and businesses across Jaipur and Rajasthan.",
+    description: "Protect your brand and ensure your business meets applicable regulatory requirements with our end-to-end trademark and compliance support.",
     rightColumn: [
-      "A name, a logo, a brand people recognise on sight — none of it legally belongs to you until it's registered. Until then, it's just something you're using and hoping nobody files first. We help individuals, professionals and businesses across Jaipur close that gap, and then keep it closed.",
+      "A name, a logo, a brand people recognise on sight — none of it legally belongs to you until it's registered. Until then, it's just something you're using and hoping nobody files first. We help individuals, professionals and businesses close that gap, and then keep it closed.",
       "Because registration isn't a one-time event — renewals lapse, objections get raised, compliance calendars get missed in the middle of running an actual business. We track the dates, handle the filings, and step in when an objection lands, so protecting what you've built doesn't depend on you remembering to.",
     ],
     linkLabel: "Protect your brand",
@@ -254,7 +254,7 @@ const advisoryDetails: readonly AdvisoryDetail[] = [
 
 const reasons = [
   ["Independent advice", "Not tied to a single insurance company.", Network],
-  ["Local presence in Jaipur", "Hands-on, relationship-based service.", MapPin],
+  ["Local presence ", "Hands-on, relationship-based service.", MapPin],
   ["Transparent assessment", "Data-backed review of your existing coverage.", BarChart3],
   ["Real premium savings", "Focus on efficient protection, not just a lower renewal price.", Gem],
   ["Dedicated claims support", "Built into the advisory relationship at no extra cost.", ShieldCheck],
@@ -424,16 +424,16 @@ function Index() {
       </section>
 
        <section id="corporate-insurance" className="bg-ivory py-24 sm:py-32">
-         <div className="section-shell"><div className="grid gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:gap-24"><div><SectionHeading eyebrow="Insurance Advisory" title="Insurance Advisory & Risk Management" copy="Independent guidance on coverage, premium and claims — for individuals, families and businesses across Jaipur and Rajasthan." /><a href="#contact" className="mt-9 inline-flex items-center gap-3 text-sm font-semibold uppercase tracking-[0.16em] text-primary transition-colors hover:text-gold">Review your insurance <ArrowRight className="size-4" /></a></div><div><p className="text-lg leading-8 text-primary">We help individuals, families and businesses build the right protection — without over-insuring or under-insuring. Rather than selling a single insurer's product, we act as your dedicated insurance advisor, reviewing what you already hold and identifying gaps, overlaps and better options across the market.</p><p className="mt-6 text-sm leading-7 text-muted-foreground">Our engagement is built around two commitments: helping you get the most efficient premium for the coverage you genuinely need, and standing beside you — at no extra cost — when a claim actually has to be made.</p></div></div><div className="mt-16 grid gap-px bg-border sm:grid-cols-2">{insuranceServices.map(([number, title, copy]) => <article key={number} className="bg-card p-7 sm:p-9"><span className="font-display text-4xl text-gold">{number}</span><h3 className="mt-8 max-w-xs font-display text-3xl leading-tight text-primary">{title}</h3><p className="mt-4 max-w-sm text-sm leading-7 text-muted-foreground">{copy}</p></article>)}</div><div className="mt-16 grid gap-10 border-t border-border pt-10 lg:grid-cols-2 lg:gap-16"><div><p className="text-[11px] font-semibold uppercase tracking-[0.25em] text-gold">For individuals & families</p><p className="mt-4 text-sm leading-7 text-muted-foreground">Life-stage advisory to protect the people, plans and possessions that matter most.</p><div className="mt-7 grid gap-x-8 gap-y-3 sm:grid-cols-2">{individualCovers.map((cover) => <div key={cover} className="flex items-start gap-3 text-sm text-primary"><Check className="mt-0.5 size-4 shrink-0 text-gold" />{cover}</div>)}</div></div><div><p className="text-[11px] font-semibold uppercase tracking-[0.25em] text-gold">For businesses & corporates</p><p className="mt-4 text-sm leading-7 text-muted-foreground">Risk-improvement advisory for operational, people and liability exposures.</p><div className="mt-7 grid gap-x-8 gap-y-3 sm:grid-cols-2">{corporateCovers.map((cover) => <div key={cover} className="flex items-start gap-3 text-sm text-primary"><Check className="mt-0.5 size-4 shrink-0 text-gold" />{cover}</div>)}</div></div></div></div>
+         <div className="section-shell"><div className="grid gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:gap-24"><div><SectionHeading eyebrow="Insurance Advisory" title="Insurance Advisory & Risk Management" copy="Independent guidance on coverage, premium and claims — for individuals, families and businesses." /><a href="#contact" className="mt-9 inline-flex items-center gap-3 text-sm font-semibold uppercase tracking-[0.16em] text-primary transition-colors hover:text-gold">Review your insurance <ArrowRight className="size-4" /></a></div><div><p className="text-lg leading-8 text-primary">We help individuals, families and businesses build the right protection — without over-insuring or under-insuring. Rather than selling a single insurer's product, we act as your dedicated insurance advisor, reviewing what you already hold and identifying gaps, overlaps and better options across the market.</p><p className="mt-6 text-sm leading-7 text-muted-foreground">Our engagement is built around two commitments: helping you get the most efficient premium for the coverage you genuinely need, and standing beside you — at no extra cost — when a claim actually has to be made.</p></div></div><div className="mt-16 grid gap-px bg-border sm:grid-cols-2">{insuranceServices.map(([number, title, copy]) => <article key={number} className="bg-card p-7 sm:p-9"><span className="font-display text-4xl text-gold">{number}</span><h3 className="mt-8 max-w-xs font-display text-3xl leading-tight text-primary">{title}</h3><p className="mt-4 max-w-sm text-sm leading-7 text-muted-foreground">{copy}</p></article>)}</div><div className="mt-16 grid gap-10 border-t border-border pt-10 lg:grid-cols-2 lg:gap-16"><div><p className="text-[11px] font-semibold uppercase tracking-[0.25em] text-gold">For individuals & families</p><p className="mt-4 text-sm leading-7 text-muted-foreground">Life-stage advisory to protect the people, plans and possessions that matter most.</p><div className="mt-7 grid gap-x-8 gap-y-3 sm:grid-cols-2">{individualCovers.map((cover) => <div key={cover} className="flex items-start gap-3 text-sm text-primary"><Check className="mt-0.5 size-4 shrink-0 text-gold" />{cover}</div>)}</div></div><div><p className="text-[11px] font-semibold uppercase tracking-[0.25em] text-gold">For businesses & corporates</p><p className="mt-4 text-sm leading-7 text-muted-foreground">Risk-improvement advisory for operational, people and liability exposures.</p><div className="mt-7 grid gap-x-8 gap-y-3 sm:grid-cols-2">{corporateCovers.map((cover) => <div key={cover} className="flex items-start gap-3 text-sm text-primary"><Check className="mt-0.5 size-4 shrink-0 text-gold" />{cover}</div>)}</div></div></div></div>
       </section>
 
       {advisoryDetails.map((detail, index) => <AdvisoryDetailSection key={detail.id} detail={detail} alt={index % 2 === 1} />)}
 
-      <section id="why-us" className="bg-navy-deep py-24 text-primary-foreground sm:py-32"><div className="section-shell"><SectionHeading eyebrow="Why CapitalNest" title="Why Corporates Partner With Us" copy="A relationship built on independence, evidence and support that stays close to the decision." light /><div className="mt-14 grid gap-px bg-gold/40 sm:grid-cols-2 lg:grid-cols-3">{reasons.map(([title, copy, Icon]) => <article key={title} className="bg-navy-deep p-7 sm:p-8"><Icon className="size-7 stroke-1 text-gold" /><h3 className="mt-10 font-display text-2xl text-primary-foreground">{title}</h3><p className="mt-3 text-sm leading-7 text-primary-foreground/60">{copy}</p></article>)}</div></div></section>
+      <section id="why-us" className="bg-navy-deep py-24 text-primary-foreground sm:py-32"><div className="section-shell"><SectionHeading eyebrow="Why CapitalNest" title="Why Individuals and Corporates Partner With Us" copy="A relationship built on independence, evidence and support that stays close to the decision." light /><div className="mt-14 grid gap-px bg-gold/40 sm:grid-cols-2 lg:grid-cols-3">{reasons.map(([title, copy, Icon]) => <article key={title} className="bg-navy-deep p-7 sm:p-8"><Icon className="size-7 stroke-1 text-gold" /><h3 className="mt-10 font-display text-2xl text-primary-foreground">{title}</h3><p className="mt-3 text-sm leading-7 text-primary-foreground/60">{copy}</p></article>)}</div></div></section>
 
       <section id="how-we-work" className="bg-background py-24 sm:py-32"><div className="section-shell"><SectionHeading eyebrow="How We Work" title="A clear path from review to readiness." copy="Four steps, built to turn a complex insurance programme into decisions you can act on." /><div className="mt-16 grid gap-0 lg:grid-cols-4">{steps.map(([number, title, copy], index) => <article key={number} className="relative border-l border-gold/50 px-6 pb-10 pt-2 first:border-l-0 first:pl-0 lg:border-l lg:pb-0 lg:pl-7 lg:pr-7 lg:first:border-l-0"><span className="font-display text-5xl text-gold/80">{number}</span><h3 className="mt-8 max-w-[12rem] font-display text-2xl leading-tight text-primary">{title}</h3><p className="mt-4 max-w-[14rem] text-sm leading-7 text-muted-foreground">{copy}</p>{index < steps.length - 1 ? <ArrowRight className="absolute bottom-0 left-6 size-5 text-gold lg:bottom-auto lg:left-auto lg:right-0 lg:top-12" /> : null}</article>)}</div></div></section>
 
-      <section className="bg-secondary py-24 sm:py-32"><div className="section-shell grid gap-12 lg:grid-cols-[0.75fr_1.25fr] lg:gap-24"><div><SectionHeading eyebrow="Who We Serve" title="Built for businesses with something to protect." /><p className="mt-8 text-sm font-semibold uppercase tracking-[0.16em] text-gold">Serving businesses across Jaipur & Rajasthan.</p></div><div className="grid gap-x-8 gap-y-0 sm:grid-cols-2">{audiences.map((audience, index) => <div key={audience} className="flex items-center gap-5 border-b border-border py-5"><span className="font-display text-xl text-gold">0{index + 1}</span><span className="text-base text-primary">{audience}</span></div>)}</div></div></section>
+      <section className="bg-secondary py-24 sm:py-32"><div className="section-shell grid gap-12 lg:grid-cols-[0.75fr_1.25fr] lg:gap-24"><div><SectionHeading eyebrow="Who We Serve" title="Built for Individuals, Families and businesses with something to protect." /><p className="mt-8 text-sm font-semibold uppercase tracking-[0.16em] text-gold">SERVING BUSINESSES ACROSS INDIA</p></div><div className="grid gap-x-8 gap-y-0 sm:grid-cols-2">{audiences.map((audience, index) => <div key={audience} className="flex items-center gap-5 border-b border-border py-5"><span className="font-display text-xl text-gold">0{index + 1}</span><span className="text-base text-primary">{audience}</span></div>)}</div></div></section>
 
       <section className="bg-primary py-20 text-primary-foreground"><div className="section-shell grid gap-10 lg:grid-cols-[1fr_auto] lg:items-center"><div><p className="text-[11px] font-semibold uppercase tracking-[0.3em] text-gold">Meet Our Founders & Advisors</p><h2 className="mt-5 font-display text-4xl text-primary-foreground sm:text-5xl">Guidance with a personal point of view.</h2></div><a href="#contact" className="inline-flex items-center gap-3 text-sm font-semibold uppercase tracking-[0.16em] text-gold">Talk to the team <ArrowRight className="size-4" /></a></div><div className="section-shell mt-12 grid gap-px bg-gold/50 sm:grid-cols-2"><div className="bg-primary py-8 pr-8"><p className="font-display text-3xl text-gold">VIKAS GUPTA</p><p className="mt-2 text-sm text-primary-foreground/60">Founder & Advisor</p></div><div className="bg-primary py-8 sm:pl-8"><p className="font-display text-3xl text-gold">VIDIT JAIN</p><p className="mt-2 text-sm text-primary-foreground/60">Founder & Advisor</p></div></div></section>
 
