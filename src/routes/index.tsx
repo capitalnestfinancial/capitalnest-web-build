@@ -97,7 +97,7 @@ const insuranceServices = [
 
 const individualCovers = [
   "Term Life Insurance",
-  "Health / Mediclaim (Individual & Family Floater)",
+  "Health Insurance (Individual & Family Floater)",
   "Motor Insurance (Car / Two-Wheeler)",
   "Home / Property Insurance",
   "Personal Accident Cover",
@@ -110,12 +110,12 @@ const corporateCovers = [
   "Fire & Special Perils",
   "Burglary",
   "Marine / Transit",
-  "Group Mediclaim",
-  "Group Personal Accident",
+  "Group Health & Accidental Insurance",
+  "      Professional Indemnity",
   "Directors & Officers Liability",
   "Public / Product Liability",
   "Workmen's Compensation",
-  "Other Corporate Covers",
+  "Other Corporate Insurance",
 ];
 
 type AdvisoryDetail = {
@@ -139,9 +139,9 @@ const advisoryDetails: readonly AdvisoryDetail[] = [
     id: "loans",
     eyebrow: "Loan Advisory",
     title: "Loan Advisory & Credit Structuring",
-    description: "Independent guidance on eligibility, lender comparison and terms — for individuals, families and businesses across Jaipur and Rajasthan.",
+    description: "From home and business loans to vehicle finance & personal loan, we help you find the right financing solution tailored to your needs. Our expert guidance makes borrowing simpler, smarter, and more transparent.",
     rightColumn: [
-      "The lowest rate you see advertised and the rate you actually qualify for are rarely the same number — and the gap is where most borrowers overpay for years without realising it. In Jaipur, we work as loan advisors who sit on your side of the table: comparing what's genuinely available across banks and NBFCs for your specific profile, structuring the application so approval doesn't stall, and pushing for the number that actually lands on your EMI.",
+      "The lowest rate you see advertised and the rate you actually qualify for are rarely the same number — and the gap is where most borrowers overpay for years without realizing it. We work as loan advisors who sit on your side of the table, comparing what's genuinely available across banks and NBFCs for your specific profile, structuring the application so approval doesn't stall, and pushing for the number that actually lands on your EMI.",
       "We don't earn more for steering you toward one lender over another, so the comparison you get is real. And we don't disappear after disbursement — if a sharper rate opens up two years into your loan, we're the ones telling you, at no extra cost.",
     ],
     linkLabel: "Discuss your borrowing need",
@@ -162,10 +162,10 @@ const advisoryDetails: readonly AdvisoryDetail[] = [
     id: "investments",
     eyebrow: "Investment Advisory",
     title: "Investment Advisory & Portfolio Management",
-    description: "Goal-led investment guidance for individuals, families and businesses across Jaipur and Rajasthan.",
+    description: "Invest with clarity, confidence and purpose. Our investment advisory services help you choose suitable investment solutions based on your financial goals, risk profile and long-term wealth creation objectives.",
     rightColumn: [
-      "Money compounds quietly when nobody interferes with it. Most portfolios don't underperform because the funds were wrong — they underperform because someone panicked in a downturn, chased last year's best performer, or simply never looked at the portfolio again after setting it up. In Jaipur, we work with individuals, families and businesses to build investments around what they're actually saving for — not around what's trending this quarter.",
-      "We stay involved after the plan is made, not just at the start. That means periodic reviews, honest conversations about what needs rebalancing, and no product bias — we're not paid more for recommending one fund house over another.",
+      "Money compounds quietly when nobody interferes with it. Most portfolios don't underperform because the funds were wrong — they underperform because someone panicked in a downturn, chased last year's best performer, or simply never looked at the portfolio again after setting it up. At CapitalNest Financial, we help you understand different investment avenues and choose solutions aligned with your financial goals, investment horizon, risk profile and liquidity requirements.",
+      "We stay involved after the plan is made, not just at the start. That means periodic reviews, honest conversations about what needs rebalancing, our team provides personalized guidance to help you make informed decisions.",
     ],
     linkLabel: "Review your portfolio",
     services: [
@@ -185,16 +185,16 @@ const advisoryDetails: readonly AdvisoryDetail[] = [
     id: "taxation",
     eyebrow: "Tax Advisory",
     title: "Taxation Advisory & Compliance",
-    description: "Proactive tax planning, accurate filing and continuing support for individuals, families and businesses across Jaipur and Rajasthan.",
+    description: "Simplify your accounting and taxation requirements with expert guidance. From ITR filing and GST compliance to accounting, audits and tax planning, we help you stay compliant and financially organized.",
     rightColumn: [
-      "Nobody plans their taxes in March. Everybody scrambles through them. That's the entire difference between tax filing and tax planning — one is something that happens to you once a year, the other is a decision you make every month that happens to make March uneventful. We work with individuals, families and businesses across Jaipur to build that second habit.",
+      "Stay compliant, organized, and financially prepared with our comprehensive audit and taxation solutions. We assist individuals and businesses with ITR Filing, Accounting & Audit, GST Compliance, Tax Planning, and related financial requirements, helping you manage your obligations efficiently and make informed financial decisions.",
       "Where planning wasn't done in time, or a notice shows up unannounced, we don't leave existing clients to handle it alone — representation and response during scrutiny or assessment comes built into the relationship, not billed as a separate emergency.",
     ],
     linkLabel: "Plan your taxes",
     services: [
       ["01", "Tax Planning & Advisory", "We review income, investments and expenses well before filing to structure deductions, exemptions, advance tax and different income streams efficiently."],
       ["02", "Income Tax & GST Return Filing", "Accurate, on-time income tax and GST filing backed by a review of Form 26AS, AIS, TDS credits, capital gains and other income heads."],
-      ["03", "TDS & Regulatory Compliance", "We track TDS / TCS computation, deposits, quarterly returns, statutory dues and the tax rates and thresholds that apply."],
+      ["03", "Audit & Regulatory Compliance", "We provide comprehensive audit, accounting, taxation, and regulatory compliance support to help businesses stay accurate, transparent, and compliant"],
       ["04", "Notice, Assessment & Audit Support", "We review notices, draft responses and provide representation and guidance during assessments, scrutiny, tax audits and documentation requests."],
     ],
     audienceLabel: "For individuals & families",
@@ -208,7 +208,7 @@ const advisoryDetails: readonly AdvisoryDetail[] = [
     id: "business-registration",
     eyebrow: "Business Advisory",
     title: "Business Registration & Entity Structuring",
-    description: "Practical guidance for choosing, registering and setting up the right legal structure across Jaipur and Rajasthan.",
+    description: "Practical guidance for choosing, registering and setting up the right legal structure.",
     rightColumn: [
       "Before a business has a product, a customer, or a rupee of revenue, it already has a structure — and that structure quietly decides how much tax it pays, how exposed the founder's personal assets are, and how easily it can raise money two years down the line. Most founders get this decision made for them by whoever files the paperwork fastest.",
       "We slow that one decision down before speeding everything after it up. Working with founders and businesses across Jaipur, we help you choose the entity that actually fits your plans — then handle the registration and the statutory filings that follow it, correctly, the first time.",
@@ -231,9 +231,9 @@ const advisoryDetails: readonly AdvisoryDetail[] = [
     id: "trademark-compliance",
     eyebrow: "Brand & Compliance Advisory",
     title: "Trademark & Regulatory Compliance",
-    description: "Brand protection and ongoing compliance support for individuals, professionals and businesses across Jaipur and Rajasthan.",
+    description: "Protect your brand and ensure your business meets applicable regulatory requirements with our end-to-end trademark and compliance support.",
     rightColumn: [
-      "A name, a logo, a brand people recognise on sight — none of it legally belongs to you until it's registered. Until then, it's just something you're using and hoping nobody files first. We help individuals, professionals and businesses across Jaipur close that gap, and then keep it closed.",
+      "A name, a logo, a brand people recognise on sight — none of it legally belongs to you until it's registered. Until then, it's just something you're using and hoping nobody files first. We help individuals, professionals and businesses close that gap, and then keep it closed.",
       "Because registration isn't a one-time event — renewals lapse, objections get raised, compliance calendars get missed in the middle of running an actual business. We track the dates, handle the filings, and step in when an objection lands, so protecting what you've built doesn't depend on you remembering to.",
     ],
     linkLabel: "Protect your brand",
