@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState, type FormEvent } from "react";
 import { z } from "zod";
 import {
@@ -7,14 +7,12 @@ import {
   BarChart3,
   Building2,
   Check,
-  ChevronDown,
   FileCheck2,
   Gem,
   HandCoins,
   Landmark,
   Mail,
   MapPin,
-  Menu,
   Network,
   Phone,
   Scale,
@@ -22,12 +20,12 @@ import {
   Sparkles,
   TrendingUp,
   Users,
-  X,
 } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import heroAsset from "@/assets/capitalnest-hero.jpg.asset.json";
 import markAsset from "@/assets/capitalnest-mark.png.asset.json";
+import { SiteFooter, SiteHeader } from "@/components/site-chrome";
 
 const navItems = [
   ["About", "about"],
@@ -47,6 +45,7 @@ const services = [
   {
     number: "01",
     title: "Insurance",
+    slug: "insurance",
     icon: ShieldCheck,
     intro: "Protection designed around what matters.",
     items: ["Health Insurance", "Term Insurance", "Property Insurance", "Motor Insurance", "Liability Insurance", "Marine Insurance", "Group Insurance"],
@@ -54,6 +53,7 @@ const services = [
   {
     number: "02",
     title: "Loans",
+    slug: "loans",
     icon: HandCoins,
     intro: "Structure the right capital for the next move.",
     items: ["Home Loan", "Business Loan", "Vehicle Loan", "Other Loans"],
@@ -61,13 +61,15 @@ const services = [
   {
     number: "03",
     title: "Investments",
+    slug: "investments",
     icon: TrendingUp,
     intro: "Build with a clear view of the future.",
     items: ["Mutual Funds", "SIP (Systematic Investment Plan)", "ULIP", "Fixed Deposit (FD)", "Endowment Plans"],
   },
   {
     number: "04",
-    title: "Taxation",
+    title: "Audit & Taxation",
+    slug: "taxation",
     icon: Scale,
     intro: "Keep decisions clear, compliant and considered.",
     items: ["ITR Filing", "Accounting & Audit", "GST", "Tax Planning"],
@@ -75,6 +77,7 @@ const services = [
   {
     number: "05",
     title: "Business Registration",
+    slug: "business-registration",
     icon: Building2,
     intro: "Set up the foundations for doing business.",
     items: ["Business Registration"],
@@ -82,6 +85,7 @@ const services = [
   {
     number: "06",
     title: "Trademark & Compliance",
+    slug: "trademark-compliance",
     icon: FileCheck2,
     intro: "Protect the identity and continuity of your enterprise.",
     items: ["Trademarking", "Compliance-related advisory"],
@@ -268,7 +272,7 @@ const steps = [
   ["04", "Implementation & Ongoing Support", "Support renewal negotiations, claims assistance and ongoing coverage reviews."],
 ] as const;
 
-const audiences = ["Manufacturing", "Trading & Distribution", "Hospitality", "Educational Institutions", "Healthcare", "Real Estate", "Construction", "Other Corporates"];
+const audiences = ["Manufacturing", "Trading & Distribution", "Hospitality", "Educational Institutions", "Healthcare", "Real Estate", "Construction", "Other Corporates", "Perfectly Fineing", "Dining Experiences"];
 
 const inquirySchema = z.object({
   name: z.string().trim().min(2, "Please enter your name.").max(80, "Name is too long."),
@@ -378,19 +382,7 @@ function Index() {
 
   return (
     <main id="home" className="overflow-hidden bg-background">
-      <header className="fixed inset-x-0 top-0 z-50 border-b border-primary-foreground/10 bg-primary/90 backdrop-blur-md">
-        <div className="section-shell grid grid-cols-[minmax(0,1fr)_auto] items-center gap-4 py-4 lg:flex lg:justify-between">
-          <BrandMark compact />
-          <nav className="hidden items-center gap-5 xl:flex" aria-label="Primary navigation">
-            {navItems.map(([label, id]) => <a key={id} href={`#${id}`} className="text-[11px] font-medium uppercase tracking-[0.13em] text-primary-foreground/70 transition-colors hover:text-gold">{label}</a>)}
-          </nav>
-          <div className="flex items-center justify-end gap-2">
-            <Button asChild variant="gold" size="sm" className="hidden sm:inline-flex"><a href="#contact">Talk to an Advisor <ArrowRight /></a></Button>
-            <Button variant="navIcon" size="icon" className="xl:hidden" onClick={() => setMenuOpen((value) => !value)} aria-label={menuOpen ? "Close menu" : "Open menu"}>{menuOpen ? <X /> : <Menu />}</Button>
-          </div>
-        </div>
-        {menuOpen ? <nav className="border-t border-primary-foreground/10 bg-primary px-4 py-4 xl:hidden" aria-label="Mobile navigation">{navItems.map(([label, id]) => <a key={id} href={`#${id}`} onClick={() => setMenuOpen(false)} className="block border-b border-primary-foreground/10 py-3 text-sm uppercase tracking-[0.14em] text-primary-foreground/80 last:border-b-0">{label}</a>)}<a href="#contact" onClick={() => setMenuOpen(false)} className="mt-3 block py-3 text-sm font-semibold uppercase tracking-[0.14em] text-gold">Talk to an Advisor <ArrowRight className="ml-2 inline size-4" /></a></nav> : null}
-      </header>
+      <SiteHeader />
 
       <section className="relative isolate flex min-h-[760px] items-center bg-primary pb-24 pt-36 text-primary-foreground sm:min-h-[820px] lg:min-h-[880px]">
         <img src={heroAsset.url} alt="Sunlit boardroom overlooking Jaipur" width={1600} height={1104} className="absolute inset-0 -z-20 h-full w-full object-cover object-center animate-slow-pan" />
@@ -398,7 +390,7 @@ function Index() {
         <div className="absolute inset-0 -z-10 bg-gradient-to-b from-primary/80 via-primary/55 to-primary/85" />
         <div className="section-shell w-full">
           <div className="mx-auto flex max-w-5xl flex-col items-center text-center animate-rise-in">
-            <BrandMark />
+             <BrandMark />
             <h1 className="mt-8 font-display text-[clamp(2.6rem,8vw,6rem)] leading-[1.02] text-primary-foreground">
               <span className="block sm:whitespace-nowrap">Building Wealth.</span>
               <span className="block text-gold sm:whitespace-nowrap">Securing Futures.</span>
@@ -419,15 +411,9 @@ function Index() {
         </div>
       </section>
 
-      <section id="services" className="bg-primary py-24 text-primary-foreground sm:py-32">
-        <div className="section-shell"><SectionHeading eyebrow="Our Services" title="Complete Financial Solutions Under One Roof" copy="A considered portfolio of services for personal milestones, business decisions and the risks in between." light /><div className="mt-14 grid gap-px bg-gold/40 sm:grid-cols-2 lg:grid-cols-3">{services.map(({ number, title, icon: Icon, intro, items }) => <article key={title} className="group bg-primary p-7 transition-colors duration-300 hover:bg-navy-soft sm:p-8"><div className="flex items-start justify-between gap-4"><span className="font-display text-3xl text-gold/70">{number}</span><Icon className="size-7 stroke-1 text-gold transition-transform duration-300 group-hover:-translate-y-1" /></div><h3 className="mt-12 font-display text-3xl text-primary-foreground">{title}</h3><p className="mt-3 min-h-14 text-sm leading-6 text-primary-foreground/60">{intro}</p><ul className="mt-7 space-y-2 border-t border-primary-foreground/15 pt-5">{items.map((item) => <li key={item} className="flex gap-2 text-sm text-primary-foreground/80"><span className="mt-2 size-1 shrink-0 rounded-full bg-gold" />{item}</li>)}</ul></article>)}</div></div>
+       <section id="services" className="bg-primary py-24 text-primary-foreground sm:py-32">
+         <div className="section-shell"><SectionHeading eyebrow="Our Services" title="Complete Financial Solutions Under One Roof" copy="A considered portfolio of services for personal milestones, business decisions and the risks in between." light /><div className="mt-14 grid gap-px bg-gold/40 sm:grid-cols-2 lg:grid-cols-3">{services.map(({ number, title, slug, icon: Icon, intro, items }) => <Link key={title} to="/services/$serviceSlug" params={{ serviceSlug: slug }} className="group bg-primary p-7 transition-colors duration-300 hover:bg-navy-soft sm:p-8"><div className="flex items-start justify-between gap-4"><span className="font-display text-3xl text-gold/70">{number}</span><Icon className="size-7 stroke-1 text-gold transition-transform duration-300 group-hover:-translate-y-1" /></div><h3 className="mt-12 font-display text-3xl text-primary-foreground">{title}</h3><p className="mt-3 min-h-14 text-sm leading-6 text-primary-foreground/60">{intro}</p><ul className="mt-7 space-y-2 border-t border-primary-foreground/15 pt-5">{items.map((item) => <li key={item} className="flex gap-2 text-sm text-primary-foreground/80"><span className="mt-2 size-1 shrink-0 rounded-full bg-gold" />{item}</li>)}</ul></Link>)}</div></div>
       </section>
-
-       <section id="corporate-insurance" className="bg-ivory py-24 sm:py-32">
-         <div className="section-shell"><div className="grid gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:gap-24"><div><SectionHeading eyebrow="Insurance Advisory" title="Insurance Advisory & Risk Management" copy="Independent guidance on coverage, premium and claims — for individuals, families and businesses." /><a href="#contact" className="mt-9 inline-flex items-center gap-3 text-sm font-semibold uppercase tracking-[0.16em] text-primary transition-colors hover:text-gold">Review your insurance <ArrowRight className="size-4" /></a></div><div><p className="text-lg leading-8 text-primary">We help individuals, families and businesses build the right protection — without over-insuring or under-insuring. Rather than selling a single insurer's product, we act as your dedicated insurance advisor, reviewing what you already hold and identifying gaps, overlaps and better options across the market.</p><p className="mt-6 text-sm leading-7 text-muted-foreground">Our engagement is built around two commitments: helping you get the most efficient premium for the coverage you genuinely need, and standing beside you — at no extra cost — when a claim actually has to be made.</p></div></div><div className="mt-16 grid gap-px bg-border sm:grid-cols-2">{insuranceServices.map(([number, title, copy]) => <article key={number} className="bg-card p-7 sm:p-9"><span className="font-display text-4xl text-gold">{number}</span><h3 className="mt-8 max-w-xs font-display text-3xl leading-tight text-primary">{title}</h3><p className="mt-4 max-w-sm text-sm leading-7 text-muted-foreground">{copy}</p></article>)}</div><div className="mt-16 grid gap-10 border-t border-border pt-10 lg:grid-cols-2 lg:gap-16"><div><p className="text-[11px] font-semibold uppercase tracking-[0.25em] text-gold">For individuals & families</p><p className="mt-4 text-sm leading-7 text-muted-foreground">Life-stage advisory to protect the people, plans and possessions that matter most.</p><div className="mt-7 grid gap-x-8 gap-y-3 sm:grid-cols-2">{individualCovers.map((cover) => <div key={cover} className="flex items-start gap-3 text-sm text-primary"><Check className="mt-0.5 size-4 shrink-0 text-gold" />{cover}</div>)}</div></div><div><p className="text-[11px] font-semibold uppercase tracking-[0.25em] text-gold">For businesses & corporates</p><p className="mt-4 text-sm leading-7 text-muted-foreground">Risk-improvement advisory for operational, people and liability exposures.</p><div className="mt-7 grid gap-x-8 gap-y-3 sm:grid-cols-2">{corporateCovers.map((cover) => <div key={cover} className="flex items-start gap-3 text-sm text-primary"><Check className="mt-0.5 size-4 shrink-0 text-gold" />{cover}</div>)}</div></div></div></div>
-      </section>
-
-      {advisoryDetails.map((detail, index) => <AdvisoryDetailSection key={detail.id} detail={detail} alt={index % 2 === 1} />)}
 
       <section id="why-us" className="bg-navy-deep py-24 text-primary-foreground sm:py-32"><div className="section-shell"><SectionHeading eyebrow="Why CapitalNest" title="Why Individuals and Corporates Partner With Us" copy="A relationship built on independence, evidence and support that stays close to the decision." light /><div className="mt-14 grid gap-px bg-gold/40 sm:grid-cols-2 lg:grid-cols-3">{reasons.map(([title, copy, Icon]) => <article key={title} className="bg-navy-deep p-7 sm:p-8"><Icon className="size-7 stroke-1 text-gold" /><h3 className="mt-10 font-display text-2xl text-primary-foreground">{title}</h3><p className="mt-3 text-sm leading-7 text-primary-foreground/60">{copy}</p></article>)}</div></div></section>
 
