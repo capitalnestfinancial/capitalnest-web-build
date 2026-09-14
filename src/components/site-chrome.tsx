@@ -34,7 +34,7 @@ export function SiteHeader() {
       <div className="section-shell grid grid-cols-[minmax(0,1fr)_auto] items-center gap-4 py-4 lg:flex lg:justify-between">
         <BrandMark compact />
         <nav className="hidden items-center gap-5 xl:flex" aria-label="Primary navigation">
-          {anchorLinks.map(([label, hash]) => <Link key={hash} to="/" hash={hash} className="text-[11px] font-medium uppercase tracking-[0.13em] text-primary-foreground/70 transition-colors hover:text-gold">{label}</Link>)}
+          <Link to="/" hash="about" className="text-[11px] font-medium uppercase tracking-[0.13em] text-primary-foreground/70 transition-colors hover:text-gold">About</Link>
           <div className="relative" onMouseEnter={() => setServicesOpen(true)} onMouseLeave={() => setServicesOpen(false)}>
             <Button variant="ghost" size="sm" className="h-auto gap-1 px-0 text-[11px] font-medium uppercase tracking-[0.13em] text-primary-foreground/70 hover:bg-transparent hover:text-gold" onClick={() => setServicesOpen((value) => !value)} aria-expanded={servicesOpen}>
               Services <ChevronDown className={`size-3 transition-transform ${servicesOpen ? "rotate-180" : ""}`} />
@@ -43,6 +43,7 @@ export function SiteHeader() {
               {services.map((service) => <Link key={service.slug} to="/services/$serviceSlug" params={{ serviceSlug: service.slug }} className="block px-4 py-3 text-xs uppercase tracking-[0.12em] text-primary-foreground/75 transition-colors hover:bg-navy-soft hover:text-gold">{service.title}</Link>)}
             </div> : null}
           </div>
+          {anchorLinks.slice(1).map(([label, hash]) => <Link key={hash} to="/" hash={hash} className="text-[11px] font-medium uppercase tracking-[0.13em] text-primary-foreground/70 transition-colors hover:text-gold">{label}</Link>)}
         </nav>
         <div className="flex items-center justify-end gap-2">
           <Button asChild variant="gold" size="sm" className="hidden sm:inline-flex"><Link to="/" hash="contact">Talk to an Advisor <ArrowRight /></Link></Button>
