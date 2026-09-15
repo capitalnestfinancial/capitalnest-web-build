@@ -1,18 +1,15 @@
 import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 
-const isLovableSandbox =
-  process.env.LOVABLE_SANDBOX === "1" ||
-  !!process.env.DEV_SERVER__PROJECT_PATH;
+const isGitHubPages = process.env.GITHUB_ACTIONS === "true";
 
 export default defineConfig({
-  nitro: isLovableSandbox ? undefined : false,
+  vite: {
+    base: isGitHubPages ? "/capitalnest-web-build/" : "/",
+  },
 
-  tanstackStart: isLovableSandbox
-    ? {}
-    : {
-        prerender: {
-          enabled: true,
-          crawlLinks: true,
-        },
-      },
+  tanstackStart: {
+    server: {
+      entry: "server",
+    },
+  },
 });
