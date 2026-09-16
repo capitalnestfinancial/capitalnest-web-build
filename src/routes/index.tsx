@@ -24,8 +24,8 @@ import {
 } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
-import heroAsset from "@/assets/capitalnest-hero.jpg.asset.json";
-import markAsset from "@/assets/capitalnest-mark.png.asset.json";
+import heroAsset from "@/assets/capitalnest-hero.jpg";
+import markAsset from "@/assets/capitalnest-mark.png";
 import { SiteFooter, SiteHeader } from "@/components/site-chrome";
 
 const navItems = [
@@ -300,7 +300,7 @@ export const Route = createFileRoute("/")({
 function BrandMark({ compact = false }: { compact?: boolean }) {
   return (
     <a href="#home" className="flex min-w-0 items-center gap-3" aria-label="CapitalNest Financial home">
-      <img src={markAsset.url} alt="CapitalNest Financial mark" width={compact ? 45 : 70} height={compact ? 38 : 60} className={`${compact ? "h-10 w-11" : "h-16 w-20 sm:h-[4.5rem] sm:w-24"} shrink-0 object-contain`} />
+      <img src={markAsset} alt="CapitalNest Financial mark" width={compact ? 45 : 70} height={compact ? 38 : 60} className={`${compact ? "h-10 w-11" : "h-16 w-20 sm:h-[4.5rem] sm:w-24"} shrink-0 object-contain`} />
       <span className="min-w-0">
         <span className={`${compact ? "text-sm" : "text-lg sm:text-xl"} block truncate font-semibold tracking-[0.18em] text-primary-foreground`}>CAPITAL<span className="text-gold">NEST</span></span>
         <span className={`${compact ? "text-[8px]" : "text-[9px] sm:text-[10px]"} mt-0.5 block tracking-[0.36em] text-gold`}>FINANCIAL</span>
@@ -386,7 +386,7 @@ function Index() {
       <SiteHeader />
 
       <section className="relative isolate flex min-h-[760px] items-center bg-primary pb-24 pt-36 text-primary-foreground sm:min-h-[820px] lg:min-h-[880px]">
-        <img src={heroAsset.url} alt="Sunlit boardroom overlooking Jaipur" width={1600} height={1104} className="absolute inset-0 -z-20 h-full w-full object-cover object-center animate-slow-pan" />
+        <img src={heroAsset} alt="Sunlit boardroom overlooking Jaipur" width={1600} height={1104} className="absolute inset-0 -z-20 h-full w-full object-cover object-center animate-slow-pan" />
         <div className="absolute inset-0 -z-10 bg-primary/75" />
         <div className="absolute inset-0 -z-10 bg-gradient-to-b from-primary/80 via-primary/55 to-primary/85" />
         <div className="section-shell w-full">
