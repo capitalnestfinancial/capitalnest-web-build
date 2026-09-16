@@ -9,7 +9,7 @@ import markAsset from "@/assets/capitalnest-mark.png";
 export function BrandMark({ compact = false }: { compact?: boolean }) {
   return (
     <Link to="/" className="flex min-w-0 items-center gap-3" aria-label="CapitalNest Financial home">
-      <img src={markAsset.url} alt="CapitalNest Financial mark" width={compact ? 45 : 58} height={compact ? 38 : 50} className={`${compact ? "h-10 w-11" : "h-14 w-16 sm:h-16 sm:w-20"} shrink-0 object-contain`} />
+      <img src={markAsset} alt="CapitalNest Financial mark" width={compact ? 45 : 58} height={compact ? 38 : 50} className={`${compact ? "h-10 w-11" : "h-14 w-16 sm:h-16 sm:w-20"} shrink-0 object-contain`} />
       <span className="min-w-0">
         <span className={`${compact ? "text-sm" : "text-lg sm:text-xl"} block truncate font-semibold tracking-[0.18em] text-primary-foreground`}>CAPITAL<span className="text-gold">NEST</span></span>
         <span className={`${compact ? "text-[8px]" : "text-[9px] sm:text-[10px]"} mt-0.5 block tracking-[0.36em] text-gold`}>FINANCIAL</span>
