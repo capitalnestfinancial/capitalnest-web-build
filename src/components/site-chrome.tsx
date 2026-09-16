@@ -4,7 +4,7 @@ import { useState } from "react";
 
 import { Button } from "@/components/ui/button";
 import { services } from "@/lib/site-data";
-import markAsset from "@/assets/capitalnest-mark.png.asset.json";
+import markAsset from "@/assets/capitalnest-mark.png";
 
 export function BrandMark({ compact = false }: { compact?: boolean }) {
   return (
